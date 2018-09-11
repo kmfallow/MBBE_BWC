@@ -5,6 +5,10 @@ date:  "`r format(Sys.Date())`"
 output: 
           html_document:
                     toc: TRUE
+                    toc_float: TRUE
+          #pdf_document:
+           #         toc: TRUE
+            #        toc_depth: 4
 ---
 
 ```{r setup, include=FALSE}
@@ -12,15 +16,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Methods
-### *Participants*
+### Participants
 Participants will be UVic undergraduates who take part in research for bonus course credit. Intended sample sizes are 90 per group for the between-subjects condition (based on the required sample size of 171 to yield 90% power of detecting a moderate effect [f = 0.25] at alpha = 0.05) and 80 in the within-subjects group (comparable required sample size here is only 44, but for the purposes of item-level analyses this is not likely to be sufficient as the within-subjects model is more complex). Testing will occur in sessions ranging from one participant at a time up to as many as 20 (past experience suggests most sessions will involve groups of 5-15 people).
 
-### *Materials*
+### Materials
 Stimuli are 198 high-resolution colour scans of masterwork paintings (originally obtained from Jeffrey Toth), and luminance-matched grayscale versions of each generated using IrfanView (Skiljan, 2016; https://www.irfanview.com/). These can all be viewed in the Stimuli folder accompanyting this pre-registration. The experiment will be administered on desktop PCs with widescreen monitors, using E-Prime software.
 
 Study and test lists are randomized anew for each subject such that individual paintings will vary across subjects with respect to study status, study/test position, and, in the within-subjects group, colour condition (colour or grayscale). In this group, exactly 50% of both studied and new paintings will be in each colour, and the same painting will never appear in both colours for the same participant. Similarly, paintings studied in colour will never be tested in grayscale or vice versa. The two colour conditions will be randomly intermixed for these participants with no constraints on the number of consecutive trials in a given colour condition.
 
-### *Procedure*
+### Procedure
 Participants will begin by studying 96 paintings bookended by 6 additional primacy/recency buffers (3 of each) for 1 s each with a 900-ms ISI (including a 500-ms central fixation cross). Paintings are presented in the centre of the screen at a maximum size of 50% of the vertical and horizontal dimensions of the display and are resized proportionally based on the vertical maximum to accommodate widely varying image dimensions (e.g., portraits vs. landscapes). Participants are informed at the beginning of the study phase that they will be seeing a series of paintings of various types, including landscapes, portraits, and still lifes [in colour and/or black and white, as applicable] and that the task is to try their best to remember each. Following the study phase there is a short filler task wherein subjects are asked to judge whether a series of numbers and letters, some of which have been rotated clockwise or counterclockwise to varying degrees, have been horizontally flipped or not. This task is designed to last approximately 5 min including time to read the instructions, with the actual task set to display as many trials as a given participant can complete in 3.5 min. There is a pause screen between this task and the recognition test to ensure the verbal test instructions are given to all participants at once.
 
 The recognition test comprises all studied images and an equal number of new images. Participants will be told they are going to see another series of paintings, some of which will be from the study list and some of which will be new, and that they will be asked to make studied/not studied judgments on a 6-pt confidence weighted scale (from 1 = definitely not studied to 6 = definitely studied). This scale will remain onscreen throughout the test, which participants will complete at their own pace. At the end of the test participants are asked a few additional questions (see instructions_wording), only one of which is critical for our purposes (as detailed in the exclusion criteria section below; the rest are for curiosity's sake and we have not previously gotten around to doing much with the responses, but may do so in the future). In group sessions participants are asked to wait until everyone is finished at the end of the experiment to avoid distracting those who are still working on the test, and are then told about the purpose of the experiment as a group.
@@ -65,7 +69,7 @@ Our primary dependent measures of interest will be hit and false alarm rates (de
     
 ###Exclusion criteria
 * **Art expertise ratings of 5**: At the end of the experiment participants will be asked to rate their own art expertise, with 5 indicating the maximum response of "very above average" familiarity with the paintings presented. Whether art expert participants approach the task differently/would be outliers w.r.t the measures we are interested in is an interesting empirical question but one that would require a separate recruitment effort; in this case, participants who choose this option will be excluded from analysis.
-* ** d' < 0.2 (in either condition, for within-subjects group)**: An admittedly arbitrary cutoff (and still above chance overall), but performance using this experimental setup is usually quite high, so this is intended to exclude participants who are responding essentially at random (and in the within-subjects case, those who adopt a strategy of allocating attention to one condition).
+* **d\'\ < 0.2 (in either condition, for within-subjects group)**: An admittedly arbitrary cutoff (and still above chance overall), but performance using this experimental setup is usually quite high, so this is intended to exclude participants who are responding essentially at random (and in the within-subjects case, those who adopt a strategy of allocating attention to one condition).
 * **Outliers**: I have in the past excluded outliers on c and d' (defined as 3+ SD from the mean in either direction) from analysis in similar studies, but have come to think there is little justification for this and do not plan to do so here. In the past applying this criterion has never had a substantive effect on the results anyway, but as frequency distributions for all dependent variables will be included with the results, anyone concerned about outliers can evaluate the data structure for themselves.
     + Outliers in the ROC analyses will be dealt with on a case-by-case basis.
     + I have no plans to make response-level exclusions (e.g., very fast or very slow responses) at this stage, but may implement such a criterion if I pursue analyses using response time.
