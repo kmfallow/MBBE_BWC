@@ -1,0 +1,80 @@
+---
+title: "MBBE BWC 2: Preregistration"
+author: "Kaitlyn Fallow (kmfallow@uvic.ca)"
+date:  "`r format(Sys.Date())`"
+output: 
+          html_document:
+                    toc: TRUE
+                    toc_float: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Methods
+### *Participants*
+Participants will be UVic undergraduates who take part in research for bonus course credit. Intended sample sizes are 90 per group for the between-subjects condition (based on the required sample size of 171 to yield 90% power of detecting a moderate effect [f = 0.25] at alpha = 0.05) and 80 in the within-subjects group (comparable required sample size here is only 44, but for the purposes of item-level analyses this is not likely to be sufficient as the within-subjects model is more complex). Testing will occur in sessions ranging from one participant at a time up to as many as 20 (past experience suggests most sessions will involve groups of 5-15 people).
+
+### *Materials*
+Stimuli are 198 high-resolution colour scans of masterwork paintings (originally obtained from Jeffrey Toth), and luminance-matched grayscale versions of each generated using IrfanView (Skiljan, 2016; https://www.irfanview.com/). These can all be viewed in the Stimuli folder accompanyting this pre-registration. The experiment will be administered on desktop PCs with widescreen monitors, using E-Prime software.
+
+Study and test lists are randomized anew for each subject such that individual paintings will vary across subjects with respect to study status, study/test position, and, in the within-subjects group, colour condition (colour or grayscale). In this group, exactly 50% of both studied and new paintings will be in each colour, and the same painting will never appear in both colours for the same participant. Similarly, paintings studied in colour will never be tested in grayscale or vice versa. The two colour conditions will be randomly intermixed for these participants with no constraints on the number of consecutive trials in a given colour condition.
+
+### *Procedure*
+Participants will begin by studying 96 paintings bookended by 6 additional primacy/recency buffers (3 of each) for 1 s each with a 900-ms ISI (including a 500-ms central fixation cross). Paintings are presented in the centre of the screen at a maximum size of 50% of the vertical and horizontal dimensions of the display and are resized proportionally based on the vertical maximum to accommodate widely varying image dimensions (e.g., portraits vs. landscapes). Participants are informed at the beginning of the study phase that they will be seeing a series of paintings of various types, including landscapes, portraits, and still lifes [in colour and/or black and white, as applicable] and that the task is to try their best to remember each. Following the study phase there is a short filler task wherein subjects are asked to judge whether a series of numbers and letters, some of which have been rotated clockwise or counterclockwise to varying degrees, have been horizontally flipped or not. This task is designed to last approximately 5 min including time to read the instructions, with the actual task set to display as many trials as a given participant can complete in 3.5 min. There is a pause screen between this task and the recognition test to ensure the verbal test instructions are given to all participants at once.
+
+The recognition test comprises all studied images and an equal number of new images. Participants will be told they are going to see another series of paintings, some of which will be from the study list and some of which will be new, and that they will be asked to make studied/not studied judgments on a 6-pt confidence weighted scale (from 1 = definitely not studied to 6 = definitely studied). This scale will remain onscreen throughout the test, which participants will complete at their own pace. At the end of the test participants are asked a few additional questions (see instructions_wording), only one of which is critical for our purposes (as detailed in the exclusion criteria section below; the rest are for curiosity's sake and we have not previously gotten around to doing much with the responses, but may do so in the future). In group sessions participants are asked to wait until everyone is finished at the end of the experiment to avoid distracting those who are still working on the test, and are then told about the purpose of the experiment as a group.
+
+## Hypotheses 
+
+### Subject-level signal detection analyses (primary hypotheses in **bold**)
+* **Mean response bias (as quantified by the signal detection measure C) will be significantly conservative for both grayscale and full colour paintings across the board (i.e., in the within-subjects condition and for both single-colour groups)**
+      + **Response bias will be significantly *more* conservative for full colour paintings than grayscale paintings in the within-subjects condition, consistent with the results of an earlier pilot study (note that we did not have a strong prediction on this front going into that pilot study)**
+          - A secondary and more tentative hypothesis based on the pilot study results is that there will be a significant interaction between item status (old or new) and image colour on the proportion of "studied" responses in the within-subjects condition, whereby the mean false alarm rate will be higher for grayscale than colour images in the within-subjects condition, but mean hit rates will be fairly similar. We did not anticipate this interaction originally and it was only directional in the pilot study, so we hope to gain further insight with a larger sample.
+      + In the between-subjects case, response bias will be significantly *more* conservative in the full colour group, similar to the within-subjects results (this hypothesis is also tentative; we expect this difference to be directionally smaller than that in the within-subjects condition as this seems to be an important variable in recognition memory, but are not planning our sample sizes around detecting such an interaction)
+* Mean sensitivity (quantified as the signal detection measure d') will be significantly higher for colour paintings in the within-subjects condition, and in the full colour group relative to the grayscale group 
+
+### ROC analyses
+* We expect zROC slopes to be lower than 1 (specifically, between 0.5 and 0.8) in all conditions, consistent with both our previous results and the norm in recognition memory data
+* We have no specific predictions as to whether or not there will be differences in these slopes as a function of image colour, but do plan to look at this in an exploratory fashion
+* We expect response bias measures corrected for unequal variance (ca and ce) will produce the same pattern of results as predicted above for uncorrected C, but
+    + The pattern of results for corrected sensitivity measures (da and de) may well differ; d' is highly sensitive to fluctuations in the old:new variance ratio. Here we have no specific predictions, but are interested to see whether these measures paint a substantially different picture given the still predominant reliance on d' in studies exploring the role of colour in recognition memory
+            
+### Test quartile analyses
+* We expect response bias estimates (c, ca, and ce) to increase (become more conservative) from the first 48-item test quartile to the last quartile in all conditions, and sensitivity estimates (d', da, and de) to decrease.
+    + Consistent with our previous results, we expect corresponding quartile-level analyses with raw response proportions will show a decline across quartiles for hit rates, while false alarm rates remain fairly stable or increase slightly at most.
+* We will investigate the possibility of colour-based differences in quartile-level patterns but have no *a priori* predictions
+
+
+## Planned analyses
+Our primary dependent measures of interest will be hit and false alarm rates (determined by collapsing our 1-6 response scale into a binary one, with 1-3 = "new" and 4-6 = "old"), and corresponding signal detection theory (SDT)-based measures of response bias (c) and sensitivity (d'). Ceiling and floor rates will be replaced according to Macmillan and Kaplan (1985) to enable calculation of c and d'. Given long-known issues with the application of c and d' to recognition memory data, namely the tendency for data to be inconsistent with the assumption of equal variance of the old and new item distributions (conditions under which c and d' become confounded), we will also conduct receiver operating characteristic (ROC) analyses with the goal of estimating the extent of this violation in our data and calculating corrected measures of sensitivity (da and de) and bias (ca and ce). The plan is to apply these corrections at the participant level based on participant-level ROCs, but if results suggest these curves are ill-fitting (e.g., if a lot of people have primarily used the extreme ends of the confidence scale) we will instead apply corrections based on aggregate by-condition ROCs. These alternate measures will be subject to the same analyses as c and d', and all will be reported; for brevity, I will refer only to c and d'.
+
+###Confirmatory analyses
+* c and d' will be calculated at the participant level, and separately by colour condition in the within-subjects group. These estimates will be subject to appropriate t-tests, namely:
+    + Paired tests in the within-subjects condition and two-sample tests in the between-subjects condition (not assuming equal variance between conditions) to test for differences as a function of image colour; although we do have directional hypotheses, this line of inquiry is still in its early stages, so we will stick with the conventional two-tailed approach (setting alpha = 0.05);
+    + Four one-sample tests to examine the hypothesis that c will be significantly conservative (i.e., greater than 0) in all conditions. Because this hypothesis is explicitly directional and firmly grounded in our prior research (which suggests moderate-to-large effects in terms of the difference from neutral), these will be one-tailed tests (using a stricter alpha level of 0.01 for each test);
+* Hit and false alarm rates will be analyzed via 2(true item status: old or new) x 2(colour: grayscale or full colour) ANOVAs (the colour factor being a repeated measure in the within-subjects case) using the proportion of "studied" responses as the dependent variable to examine the hypothesis that the effect of colour is primarily on false alarms, not hits. The effect of primary interest here is therefore the interaction -  we expect this to be significant at the .05 level, representing a greater colour-based difference on responding to new items than old items (which we will further characterize via post hoc comparisons).
+
+
+###(Mostly) exploratory analyses
+* c, d', and hit and false alarm rates will all also be calculated at the test quartile level for each participant and condition and analyzed via 2 (colour) x 4 (quartile) ANOVAs. This is partially confirmatory (w.r.t. the main effects of quartile) but the colour component is entirely exploratory.
+* ROCs will be calculated at the subject level (and possibly at the condition/group level, collapsing across subjects) for reasons mentioned above, and possibly at the item level for more exploratory purposes. These will be fit using the PCA-based method described by John Vokey (2016).
+* Item-level estimates of c and d' will be obtained using a generalized linear mixed modeling approach, with the formulation of the model originally developed and tested by Reinhold Kliegl and Max Rabe (see e.g., Rabe, 2018). These may also be calculated along with item-level hit and false alarm rates using the coarser method of collapsing across subjects.
+    + I plan to calculate within-study rank correlations for these estimates (e.g., looking at whether paintings that are better discriminated when presented in colour are also better discriminated when presented in grayscale) as well as correlations with estimates for the same images obtained from prior studies. Depending on these results I may explore some finer-grained questions, e.g., whether these patterns differ between landscapes and portraits, with the goal of further refining future hypotheses.
+    
+    
+###Exclusion criteria
+* **Art expertise ratings of 5**: At the end of the experiment participants will be asked to rate their own art expertise, with 5 indicating the maximum response of "very above average" familiarity with the paintings presented. Whether art expert participants approach the task differently/would be outliers w.r.t the measures we are interested in is an interesting empirical question but one that would require a separate recruitment effort; in this case, participants who choose this option will be excluded from analysis.
+* ** d' < 0.2 (in either condition, for within-subjects group)**: An admittedly arbitrary cutoff (and still above chance overall), but performance using this experimental setup is usually quite high, so this is intended to exclude participants who are responding essentially at random (and in the within-subjects case, those who adopt a strategy of allocating attention to one condition).
+* **Outliers**: I have in the past excluded outliers on c and d' (defined as 3+ SD from the mean in either direction) from analysis in similar studies, but have come to think there is little justification for this and do not plan to do so here. In the past applying this criterion has never had a substantive effect on the results anyway, but as frequency distributions for all dependent variables will be included with the results, anyone concerned about outliers can evaluate the data structure for themselves.
+    + Outliers in the ROC analyses will be dealt with on a case-by-case basis.
+    + I have no plans to make response-level exclusions (e.g., very fast or very slow responses) at this stage, but may implement such a criterion if I pursue analyses using response time.
+
+
+###Data peeking plans
+The within-subjects pilot study using these stimuli resulted in an undesirably and unusually high number of performance-based (d' < 0.2) exclusions (9 out of 34 participants). However, previous studies using the colour paintings have also had issues with undesirably high numbers of near-ceiling estimates at the participant and/or item level, especially with respect to near-floor (or even at floor) false alarm rates, so I am hesitant to implement any manipulations intended to boost performance outright. With these problems in mind, I intend to start by running ~20 participants in the within-subjects and grayscale-only conditions and looking at the data. If 4 or more participants in either condition would be excluded from further analysis under the d' < 0.2 criterion, I will consider adjusting the procedure to boost performance. If there are even 2-3 d'-based exclusions per condition at this stage I will probably continue to monitor the data as it comes in for the next 10-20 subjects to make sure exclusion rates do not exceed 15%. If there are 0-1 exclusions I will proceed with data collection and hope this initial group was not disproportionately hypermnesic! 
+
+Regardless, the sample sizes discussed above pertain to whatever the *final* procedure ends up being, so if it is changed after this initial data-peeking stage, these early participants will not be included in the final analysis.
+
+
