@@ -1,7 +1,7 @@
 ---
 title: "MBBE BWC 2: Preregistration"
 author: "Kaitlyn Fallow (kmfallow@uvic.ca)"
-date:  "`r format(Sys.Date())`"
+date:  "2018-09-12"
 output: 
           #pdf_document: 
            #         toc: TRUE
@@ -13,9 +13,7 @@ output:
                     keep_md: TRUE
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 ##Background
 Background information is mostly copied from the pre-registration for a preceding pilot study, for which I hope to post summary data shortly (this will be located at https://osf.io/h7sjr/).
